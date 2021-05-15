@@ -14,7 +14,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="<?= base_url(); ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -24,12 +24,12 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                Member
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+                <a class="nav-link collapsed" href="<?= base_url('tamu'); ?>">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Data Tamu</span>
                 </a>

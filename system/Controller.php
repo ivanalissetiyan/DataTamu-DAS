@@ -34,7 +34,7 @@ class Controller
 	/**
 	 * Instance of the main Request object.
 	 *
-	 * @var RequestInterface
+	 * @var IncomingRequest
 	 */
 	protected $request;
 
@@ -108,7 +108,7 @@ class Controller
 	 */
 	protected function forceHTTPS(int $duration = 31536000)
 	{
-		force_https($duration, $this->request, $this->response);
+		force_https($duration, $this->IncomingRequest, $this->response);
 	}
 
 	//--------------------------------------------------------------------

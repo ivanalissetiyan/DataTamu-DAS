@@ -9,7 +9,7 @@ class Home extends BaseController
   
 	
 			$data = [
-				'judul' => 'Homepage'
+				'judul' => 'Selamat Datang di Buku tamu'
 			];
 
 		
