@@ -18,4 +18,9 @@ class M_Tamu extends Model{
         return $this->db->table('data_tamu')->insert($data);
     }
 
+    public function hapus($id)
+    {
+        return $this->db->table('data_tamu')->delete(['id' => $id]);
+    }
+
 }

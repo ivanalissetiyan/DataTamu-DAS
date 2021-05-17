@@ -40,6 +40,7 @@
                <th>Nama Tamu</th>
                <th>Asal</th>
                <th>Tujuan</th>
+               <th>Opsi</th>
            </tr>
        </thead>
        <tbody>
@@ -50,6 +51,9 @@
                <td><?= $row['nama_tamu']; ?></td>
                <td><?= $row['asal'];  ?></td>
                <td><?= $row['tujuan']; ?></td>
+               <td>
+                    <button type="button" data-toggle="modal" data-target="#modalHapus" class="btn btn-sm btn-danger"> <i class="fa fa-trash-alt"></i> </button>
+               </td>
            </tr>
                
                 <?php $i++; ?>
@@ -109,6 +113,26 @@
          </form>
      </div>
  </div>
+
+
+
+<!-- Modal Hapus Data Tamu -->
+<div class="modal fade" id="modalHapus">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          
+            <div class="modal-body">
+                Apakah anda yakin ingin menghapus data ini ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <a href="/tamu/hapus/<?= $row['id']; ?>" class="btn btn-primary">Yakin</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
  
  <script>
      $('#exampleModal').on('show.bs.modal', event => {
