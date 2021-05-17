@@ -3,6 +3,29 @@
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800"><?= $judul; ?></h1>
 
+    <?php if(session()->get('message')) : ?>
+
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+         Data Tamu Berhasil <strong><?= session()->getFlashdata('message'); ?></strong> 
+        </div>
+
+    <?php endif; ?>
+
+   
+    <div class="row">
+        <div class="col-md-6">
+            <?php 
+                if (session()->get('err')) {
+                    echo "<div class='alert alert-danger p-0 pt-2' role='alert'>" . session()->get('err') . "</div>";
+                    session()->remove('err');
+                }
+            ?>
+        </div>
+    </div>
+
 <div class="card">
     <div class="card-header">
      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTambah">
@@ -80,7 +103,7 @@
              </div>
              <div class="modal-footer">
                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                 <button type="submit " class="btn btn-primary">Tambah Data</button>
+                 <button type="submit" name="tambah" class="btn btn-primary">Tambah Data</button>
              </div>
          </div>
          </form>
