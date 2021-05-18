@@ -19,7 +19,7 @@ class Home extends BaseController
 		// Jika belum login, user tidak memiliki akses
 		if (!$this->auth->check())
 		{
-			$redirectURL = session('redirect_url') ?? site_url('/');
+			$redirectURL = session('redirect_url') ?? '/login';
 			unset($_SESSION['redirect_url']);
 
 			return redirect()->to($redirectURL);
