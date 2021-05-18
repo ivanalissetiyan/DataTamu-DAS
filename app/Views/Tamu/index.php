@@ -52,6 +52,12 @@
                <td><?= $row['asal'];  ?></td>
                <td><?= $row['tujuan']; ?></td>
                <td>
+                    <button type="button" data-toggle="modal" data-target="#modalUbah" id="btn-edit" class="btn btn-sm btn-warning" 
+                    data-id="<?= $row['id']; ?>"
+                    data-nama_tamu="<?= $row['nama_tamu']; ?>"
+                    data-asal="<?= $row['asal']; ?>"
+                    data-tujuan="<?= $row['tujuan']; ?>"
+                    ><i class="fa fa-edit"></i> </button>
                     <button type="button" data-toggle="modal" data-target="#modalHapus" class="btn btn-sm btn-danger"> <i class="fa fa-trash-alt"></i> </button>
                </td>
            </tr>
@@ -77,7 +83,7 @@
  <!-- Button trigger modal -->
 
  
- <!-- Modal -->
+ <!-- Modal box tambah tamu-->
  <div class="modal fade" id="modalTambah">
      <div class="modal-dialog" role="document">
          <div class="modal-content">
@@ -114,6 +120,43 @@
      </div>
  </div>
 
+  <!-- Modal box edit tamu-->
+  <div class="modal fade" id="modalUbah">
+     <div class="modal-dialog" role="document">
+         <div class="modal-content">
+                 <div class="modal-header">
+                         <h5 class="modal-title">Ubah <?= $judul; ?></h5>
+                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                 <span aria-hidden="true">&times;</span>
+                             </button>
+                     </div>
+             <div class="modal-body">
+                 <div class="container-fluid">
+                     <form action="<?= base_url('tamu/ubah'); ?>" method="post">
+                     <input type="hidden" name="id" id="id-tamu">
+                     <div class="form-group mb-0">
+                       <label for="nama_tamu"></label>
+                       <input type="text" name="nama_tamu" id="nama_tamu" class="form-control" value="<?= $row['nama_tamu'] ?>">
+                     </div>
+                     <div class="form-group mb-0">
+                       <label for="asal"></label>
+                       <input type="text" name="asal" id="asal" class="form-control" placeholder="Masukkan asal" value="<?= $row['asal'] ?>">
+                     </div>
+                     <div class="form-group mb-0">
+                       <label for="tujuan"></label>
+                       <input type="text" name="tujuan" id="tujuan" class="form-control" placeholder="Masukkan tujuan" value="<?= $row['tujuan'] ?>">
+                     </div>
+                 </div>
+             </div>
+             <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                 <button type="submit" name="ubah" class="btn btn-primary">Ubah Data</button>
+             </div>
+         </div>
+         </form>
+     </div>
+ </div>
+
 
 
 <!-- Modal Hapus Data Tamu -->
@@ -134,13 +177,5 @@
 
 
  
- <script>
-     $('#exampleModal').on('show.bs.modal', event => {
-         var button = $(event.relatedTarget);
-         var modal = $(this);
-         // Use above variables to manipulate the DOM
-         
-     });
- </script>
 
    
