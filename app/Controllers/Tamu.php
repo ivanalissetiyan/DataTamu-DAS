@@ -10,12 +10,24 @@ class Tamu extends Controller
     {
         $this->model = new M_Tamu;
         helper('sn');
+        $this->session = service('session');
+		$this->auth = service('authentication');
 
     }
 
 
     public function index()
     {
+
+        // Jika belum login, user tidak memiliki akses
+		if (!$this->auth->check())
+		{
+			$redirectURL = session('redirect_url') ?? site_url('/');
+			unset($_SESSION['redirect_url']);
+
+			return redirect()->to($redirectURL);
+		}
+
         $data = [
             'judul' => 'Data Tamu',
             'tamu' => $this->model->getAllData()
@@ -28,6 +40,17 @@ class Tamu extends Controller
 
     public function tambah()
     {
+
+        // Jika belum login, user tidak memiliki akses
+		if (!$this->auth->check())
+		{
+			$redirectURL = session('redirect_url') ?? site_url('/');
+			unset($_SESSION['redirect_url']);
+
+			return redirect()->to($redirectURL);
+		}
+
+
         if (isset($_POST['tambah'])) {
             $val = $this->validate([
                 'nama_tamu' => [
@@ -76,6 +99,16 @@ class Tamu extends Controller
 
     public function ubah()
     {
+
+        // Jika belum login, user tidak memiliki akses
+		if (!$this->auth->check())
+		{
+			$redirectURL = session('redirect_url') ?? site_url('/');
+			unset($_SESSION['redirect_url']);
+
+			return redirect()->to($redirectURL);
+		}
+
         if (isset($_POST['ubah'])) {
 
             // // ketika pas diedit dan nisn tidak di ganti, tidak lagi ada validasi bahwasannya nisn sudah ada
@@ -145,6 +178,17 @@ class Tamu extends Controller
 
     public function hapus($id)
     {
+
+        // Jika belum login, user tidak memiliki akses
+		if (!$this->auth->check())
+		{
+			$redirectURL = session('redirect_url') ?? site_url('/');
+			unset($_SESSION['redirect_url']);
+
+			return redirect()->to($redirectURL);
+		}
+
+
         $success = $this->model->hapus($id);
         if ($success) {
             session()->setFlashdata('message', 'dihapus');
