@@ -9,6 +9,7 @@ class Tamu extends Controller
     public function __construct()
     {
         $this->model = new M_Tamu;
+        helper('sn');
 
     }
 
@@ -20,11 +21,9 @@ class Tamu extends Controller
             'tamu' => $this->model->getAllData()
         ];
 
-        echo view('templates/v_header', $data);
-		echo view('templates/v_sidebar');
-		echo view('templates/v_topbar');
-		echo view('Tamu/index');
-		echo view('templates/v_footer');
+        // Load View
+        tampilan('tamu/index', $data);
+        
     }
 
     public function tambah()
@@ -53,11 +52,8 @@ class Tamu extends Controller
                     'tamu' => $this->model->getAllData()
                 ];
         
-                echo view('templates/v_header', $data);
-                echo view('templates/v_sidebar');
-                echo view('templates/v_topbar');
-                echo view('Tamu/index');
-                echo view('templates/v_footer');
+                 // Load View
+                  tampilan('tamu/index', $data);
             } else {
                 $data = [
                     'nama_tamu' => $this->request->getPost('nama_tamu'),
@@ -122,11 +118,8 @@ class Tamu extends Controller
                     'tamu' => $this->model->getAllData()
                 ];
         
-                echo view('templates/v_header', $data);
-                echo view('templates/v_sidebar');
-                echo view('templates/v_topbar');
-                echo view('Tamu/index');
-                echo view('templates/v_footer');
+                 // Load View
+                tampilan('tamu/index', $data);
             } else {
                 $id = $this->request->getPost('id');
 

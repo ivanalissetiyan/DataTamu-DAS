@@ -4,6 +4,14 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
+
+	public function __construct()
+    {
+       
+        helper('sn');
+
+    }
+
 	public function index()
 	{
   
@@ -14,10 +22,6 @@ class Home extends BaseController
 
 		
 
-		echo view('templates/v_header', $data);
-		echo view('templates/v_sidebar');
-		echo view('templates/v_topbar');
-		echo view('home/index');
-		echo view('templates/v_footer');
+		tampilan('home/index', $data);
 	}
 }
