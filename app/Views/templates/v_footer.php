@@ -51,10 +51,15 @@
     <!-- Custom scripts for all pages-->
     <script src="/assets/js/sb-admin-2.min.js"></script>
 
+    <!-- Sweet Alert 2 -->
+    <script src="/assets/vendor/sweetalert/sweetalert2.all.js"></script>
+
+
     <!-- My Script  -->
     <script src="/assets/js/script.js"></script>
 
-
+     
+    
 </body>
 
 </html>

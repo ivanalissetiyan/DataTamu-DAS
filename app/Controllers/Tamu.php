@@ -165,7 +165,7 @@ class Tamu extends Controller
                 $success = $this->model->ubah($data, $id);
                 if ($success) {
                     session()->setFlashdata('message', 'diubah');
-                    return redirect()->to(base_url('tamu'));
+                    return redirect()->to(base_url('/tamu'));
                 }
                  
             }
@@ -192,7 +192,7 @@ class Tamu extends Controller
         $success = $this->model->hapus($id);
         if ($success) {
             session()->setFlashdata('message', 'dihapus');
-            return redirect()->to(base_url('tamu'));
+            return redirect()->to(base_url('/tamu'));
         }
     }
 
