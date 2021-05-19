@@ -196,4 +196,15 @@ class Tamu extends Controller
         }
     }
 
+    public function excel()
+    {
+        $data = [
+            'tamu' => $this->model->getAllData()
+        ];
+        
+        echo view('tamu/excel', $data);
+    }
+
+
+
 }

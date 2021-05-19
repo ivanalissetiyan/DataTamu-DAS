@@ -29,8 +29,8 @@
         </button>
         </div>
          <div class="col-md">
-           <button onclick="window.print()" class="btn btn-outline-secondary shadow float-right"> Print <i class="fa fa-print"></i> </button>
-         
+           <button onclick="window.print()" class="btn btn-outline-secondary shadow float-right ml-2"> Print <i class="fa fa-print"></i> </button>
+            <a href="/tamu/excel" class="btn btn-outline-success shadow float-right">Excel <i class="fa fa-file-excel"></i> </a>
         </div>
     </div>
 
