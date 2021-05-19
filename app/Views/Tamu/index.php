@@ -21,9 +21,19 @@
 
 <div class="card">
     <div class="card-header">
-     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTambah">
-       <i class="class fa fa-plus">Tambah Data</i>
-     </button>
+    <div class="row">
+        <div class="col-md">
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTambah">
+        <i class="class fa fa-plus">Tambah Data</i>
+        </button>
+        </div>
+         <div class="col-md">
+           <button onclick="window.print()" class="btn btn-outline-secondary shadow float-right"> Print <i class="fa fa-print"></i> </button>
+         
+        </div>
+    </div>
+
     </div>
 
     <table class="table table-striped">

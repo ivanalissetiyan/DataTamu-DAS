@@ -18,6 +18,25 @@
     <!-- Custom styles for this template-->
     <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
 
+    <style>
+        @media print {
+            @page {
+                margin-top: 30px;
+                margin-bottom: 10px;
+            }
+            .navbar-nav,
+            .btn,
+            th:nth-child(5),
+            td:nth-child(5),
+            footer,
+            a#debug-icon-link {
+                display: none;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 <body id="page-top">
